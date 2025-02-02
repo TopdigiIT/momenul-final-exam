@@ -1,17 +1,18 @@
 import React from 'react';
 import { Router, Route, Routes } from 'react-router-dom';
-import Aboutus from './assets/Pages/Home/Aboutus';
-import BlogPage from './assets/Pages/Home/Blogpage';
-import Header from './assets/Components/Header';
-import Home from './assets/Pages/Home/Home';
-import Footer from './assets/Components/Footer';
-import Newsletter from './assets/Pages/Home/Newsletter';
-import ContactUs from './assets/Pages/Home/Contactus';
-import CategoryPage from './assets/Pages/Home/Store';
-import Phone from './assets/Pages/Products/Phones/Phone';
-import Watch from './assets/Pages/Products/Watches/Watch';
-import Laptop from './assets/Pages/Products/Laptops/Laptop';
-import NotFoundPage from './assets/Pages/Notfound';
+import Header from './Header';
+import HomeSection from './Home';
+import Newsletter from './Newsletter';
+import AboutUs from './Aboutus';
+import ContactUs from './Contactus';
+import BlogPage from './Blogpage';
+import Store from './Store';
+import Phone from './Phone';
+import Watch from './Watch';
+import Laptop from './Laptop';
+import NotFoundPage from './Notfound';
+import Footer from './Footer';
+
 
 
 
@@ -21,22 +22,16 @@ const App = () => {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<> <Home /> <CategoryPage /> <Newsletter /> </>} />
-        <Route path='/aboutus' element= {<Aboutus />}/>
-        <Route path='/contactus' element= {<ContactUs />}/>
-        <Route path='/blogs' element= {<BlogPage />}/>
-        <Route path='/store' element= {<CategoryPage />}/>
-        <Route path="/store:phone" element={<> <CategoryPage /> <Phone /> </>} />
-        <Route path="/store:watch" element={<> <CategoryPage /> <Watch /> </>} />
-        <Route path="/store:laptop" element={<> <CategoryPage /> <Laptop /> </>} />
+        <Route path='/' element={<> <HomeSection /> <Store /> <Newsletter /> </>} />
+        <Route path='/aboutus' element= {<AboutUs />} />
+        <Route path='/contactus' element= {<ContactUs />} />
+        <Route path='/blogs' element= {<BlogPage />} />
+        <Route path='/store' element= {<Store />} />
+        <Route path='/store:phone' element= {<> <Store /> <Phone /> </>} />
+        <Route path='/store:watch' element= {<> <Store /> <Watch /> </>} />
+        <Route path='/store:laptop' element= {<> <Store /> <Laptop /> </>} />
         <Route path="*" element={<NotFoundPage />}/>
-        
-        
-         
-        
-        
-        
-      </Routes>
+       </Routes>
       <Footer />
       
     </div>
